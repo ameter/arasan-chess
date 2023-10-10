@@ -1,11 +1,11 @@
 [submodule "src/syzygy"]
 	path = src/syzygy
-	url = https://github.com/jdart1/Fathom
+	url = git@github.com:ameter/Fathom.git
         ignore = dirty
 [submodule "tools/stats"]
 	path = tools/stats
-	url = https://www.github.com/jdart1/stats
+	url = git@github.com:ameter/stats.git
         ignore = dirty
 [submodule "src/nnue"]
 	path = src/nnue
-	url = https://github.com/jdart1/nnue.git
+	url = git@github.com:ameter/nnue.git
