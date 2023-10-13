@@ -37,6 +37,9 @@ public:
     bool isSearching() const noexcept {
         return searcher->searching();
     }
+    
+    // Execute a command, return false if program should terminate.
+    bool do_command(const std::string &cmd, Board &board);
 
 private:
 
@@ -168,7 +171,7 @@ private:
     bool uciOptionCompare(const std::string &a, const std::string &b);
 
     // Execute a command, return false if program should terminate.
-    bool do_command(const std::string &cmd, Board &board);
+//    bool do_command(const std::string &cmd, Board &board);
 
     // Result from pondering. Hit = predicted opponent move,
     // NoHit = did not predict opponent move, Pending =
