@@ -162,7 +162,8 @@ void Board::setCastleStatus( CastleType t, ColorType c )
 
 void Board::reset()
 {
-   assert(initialBoard);
+//   assert(initialBoard);
+   if (!initialBoard) return;
    *this = *initialBoard;
 }
 
@@ -182,7 +183,8 @@ Board::Board(const Board &b)
    memcpy(&contents,&b.contents,(uint8_t*)repList-(uint8_t*)&contents);
    // Copy the repetition table
    int rep_entries = (int)(b.repListHead - b.repList);
-   assert(rep_entries>=0 && rep_entries<RepListSize);
+//   assert(rep_entries>=0 && rep_entries<RepListSize);
+   if(rep_entries < 0 || rep_entries > RepListSize) return;
    if (rep_entries) {
      memcpy(repList,b.repList,sizeof(hash_t)*rep_entries);
    }
